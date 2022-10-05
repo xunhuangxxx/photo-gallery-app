@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
+
+import SearchForm from './components/SearchForm';
+import Nav from './components/Nav';
+import Photo from './components/Photo';
+import NotFound from './components/NotFound';
+import apiKey from './config.js';
+import Results from './components/Results';
+
+
 
 function App() {
+  const api = apiKey;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        
+        <SearchForm />
+        <Nav className="App-link"/> 
+
+        <NotFound />
+
+        <Switch>
+          <Route exact path="/" component={NotFound}/>
+          <Route path="/:tags"  component={Results} />
+          
+          
+
+        </Switch>
+      
+          
+      </div>
+   </BrowserRouter>  
   );
 }
 
