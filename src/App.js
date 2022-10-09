@@ -3,11 +3,12 @@ import React from 'react';
 import { BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 
 import SearchForm from './components/SearchForm';
-import Nav from './components/Nav';
+
 import Photo from './components/Photo';
 import NotFound from './components/NotFound';
 import apiKey from './config.js';
 import Results from './components/Results';
+import Home from './components/Home';
 
 
 
@@ -16,19 +17,12 @@ function App() {
   
   return (
     <BrowserRouter>
-      <div className="App">
-        
-        <SearchForm />
-        <Nav className="App-link"/> 
-
-        <NotFound />
+      <div>
 
         <Switch>
-          <Route exact path="/" component={NotFound}/>
-          <Route path="/:tags"  component={Results} />
+          <Route exact path="/" component={Home}/>
+          <Route path="/:tags" component={Results} /> 
           
-          
-
         </Switch>
       
           
