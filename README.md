@@ -4,7 +4,9 @@ This app is a photo search engine that
   - The user can search pictures by typing key word
   
 # How to run
-
+ - Install the dependencies by running `yarn` in the terminal
+ - Run it in the localhost browser by running `yarn start` in the terminal
+ - Go to `localhost:3000`
 
 # How it looks
 
